@@ -1,13 +1,16 @@
-# Re-flection
+# Re-flection / 镜影溯光
 godot version: 4.4 stable
 
 ## Currently implemented features:
-+ Light & Flat mirror
++ Light
++ Flat mirror
 
 ## Todos
 + Convex mirror
 + Concave mirror
-+ Water clock
++ Character control
++ Exit game
 + UI
-+ Character control (optional)
++ Art assets
 + Level system
++ Water clock
