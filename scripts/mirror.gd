@@ -1,3 +1,4 @@
+@tool
 class_name Mirror
 extends Sprite2D
 
@@ -5,13 +6,13 @@ extends Sprite2D
 var length: float
 
 func get_intersection(starting_pos: Vector2, direction: Vector2) -> Vector2:
-	VectorDebugTool.get_instance().clear()
+	#VectorDebugTool.get_instance().clear()
 	# Calculate the intersection point with the line defined by starting_pos and direction
 	var self_center = position
 	var self_half_length = length / 2
 	var self_normal = get_normal()
 	
-	VectorDebugTool.draw(position, self_normal, Color.RED, "", 100.0)
+	#VectorDebugTool.draw(position, self_normal, Color.RED, "", 100.0)
 	var self_start = self_center - self_normal.rotated(PI / 2) * self_half_length
 	var self_end = self_center + self_normal.rotated(PI / 2) * self_half_length
 	var line_start = starting_pos

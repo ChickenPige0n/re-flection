@@ -14,25 +14,39 @@ gradient = SubResource("Gradient_72e8q")
 [node name="Game" type="Node2D"]
 
 [node name="EditUi" parent="." instance=ExtResource("1_d2op2")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 1152.0
 offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Light" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 707.107, 707.107)
 width = 5.0
 script = ExtResource("1_72e8q")
-direction = Vector2(0.5, 0.5)
+direction = Vector2(0.707107, 0.707107)
 
 [node name="Mirror" type="Sprite2D" parent="."]
-position = Vector2(417, 408)
-rotation = 2.88797
+position = Vector2(263, 493)
+rotation = 0.124487
 scale = Vector2(1, 5)
 texture = SubResource("GradientTexture1D_d2op2")
 script = ExtResource("1_s3esy")
 length = 256.0
 
 [node name="Mirror2" type="Sprite2D" parent="."]
-position = Vector2(353, 30)
-rotation = 0.427884
+position = Vector2(346, 93)
+rotation = 5.54329
+scale = Vector2(1, 5)
+texture = SubResource("GradientTexture1D_d2op2")
+script = ExtResource("1_s3esy")
+length = 256.0
+
+[node name="Mirror3" type="Sprite2D" parent="."]
+position = Vector2(452, 262)
+rotation = 1.40525
 scale = Vector2(1, 5)
 texture = SubResource("GradientTexture1D_d2op2")
 script = ExtResource("1_s3esy")
