@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7xvhqovqpoxc"]
+[gd_scene load_steps=6 format=3 uid="uid://c7xvhqovqpoxc"]
 
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="1_s3esy"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_0rdsr"]
+[ext_resource type="Script" uid="uid://bymy66brulfvb" path="res://scripts/convex.gd" id="5_ipu61"]
 
 [node name="Game" type="Node2D"]
 
@@ -18,8 +19,8 @@ grow_vertical = 1
 
 [node name="Mirror" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(390, 77)
-rotation = -3.25225
+position = Vector2(347, 90)
+rotation = -3.6186
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
 length = 256.0
@@ -34,15 +35,21 @@ length = 256.0
 
 [node name="Mirror3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(538, 330)
-rotation = -0.233595
+position = Vector2(525, 371)
+rotation = 0.285356
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
 length = 256.0
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305, 282.538, 285.843, 366.343, 79.6287, 540.005, 329.523, 679.683, -660.674)
+points = PackedVector2Array(0, 3.305, 282.538, 285.843, 366.15, 80.103, 1339.64, 308.836)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(0.707107, 0.707107)
 starting_pos = Vector2(0, 3.305)
+
+[node name="Convex" type="Sprite2D" parent="."]
+position = Vector2(970, 216)
+rotation = -1.78108
+texture = ExtResource("2_0rdsr")
+script = ExtResource("5_ipu61")
