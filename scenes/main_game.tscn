@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7xvhqovqpoxc"]
+
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="1_s3esy"]
+
+[sub_resource type="Gradient" id="Gradient_72e8q"]
+offsets = PackedFloat32Array(0, 0.532468, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d2op2"]
+gradient = SubResource("Gradient_72e8q")
+width = 512
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Light" type="Line2D" parent="."]
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(0.5, 0.5)
+
+[node name="Mirror" type="Sprite2D" parent="."]
+position = Vector2(417, 408)
+rotation = 2.88797
+scale = Vector2(1, 5)
+texture = SubResource("GradientTexture1D_d2op2")
+script = ExtResource("1_s3esy")
+length = 256.0
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+position = Vector2(353, 30)
+rotation = 0.427884
+scale = Vector2(1, 5)
+texture = SubResource("GradientTexture1D_d2op2")
+script = ExtResource("1_s3esy")
+length = 256.0
