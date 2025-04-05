@@ -6,7 +6,7 @@ class_name Intersectable
 @export var movable: bool = true
 @export var rotatable: bool = true
 
-func get_light_forward(intersection: Vector2 ,light_direction: Vector2):
+func calculate_light_direction(_intersection: Vector2 ,_light_direction: Vector2):
 	return Vector2.ZERO
     
 
@@ -41,14 +41,4 @@ func get_line_intersection(line1_start: Vector2, line1_end: Vector2, line2_start
 	if ua < 0 or ua > 1 or ub < 0 or ub > 1:
 		return null # Intersection is outside the segments
 	return line1_start + ua * (line1_end - line1_start)
-
-func is_point_on_line(point: Vector2, line_start: Vector2, line_end: Vector2) -> bool:
-	# Check if a point is on the line segment defined by line_start and line_end
-	var cross_product = (point - line_start).cross(line_end - line_start)
-	if abs(cross_product) > 0.001: # Tolerance for floating point precision
-		return false
-	var dot_product = (point - line_start).dot(line_end - line_start)
-	if dot_product < 0 or dot_product > (line_end - line_start).length_squared():
-		return false
-	return true
 

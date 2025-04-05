@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 		if closest_component:
 			self.add_point(closest_component_point)
 			now_position = closest_component_point
-			now_direction = closest_component.get_light_forward(closest_component_point, now_direction)
+			now_direction = closest_component.calculate_light_direction(closest_component_point, now_direction)
 			reflection_count += 1
 		else:
 			# No more intersections found
