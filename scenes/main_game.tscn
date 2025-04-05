@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="1_s3esy"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_0rdsr"]
-[ext_resource type="Script" uid="uid://bymy66brulfvb" path="res://scripts/convex.gd" id="5_ipu61"]
+[ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="5_ipu61"]
 
 [node name="Game" type="Node2D"]
 
@@ -23,33 +23,66 @@ position = Vector2(347, 90)
 rotation = -3.6186
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
-length = 256.0
 
 [node name="Mirror2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(262, 290)
+position = Vector2(111, 39)
 rotation = 6.08349
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
-length = 256.0
 
 [node name="Mirror3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(525, 371)
+position = Vector2(519, 168)
 rotation = 0.285356
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
-length = 256.0
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305, 282.538, 285.843, 366.15, 80.103, 1339.64, 308.836)
+points = PackedVector2Array(0, 3.305, 48.3707, 51.6757, 424.863, -874.744)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(0.707107, 0.707107)
 starting_pos = Vector2(0, 3.305)
 
 [node name="Convex" type="Sprite2D" parent="."]
-position = Vector2(970, 216)
-rotation = -1.78108
+position = Vector2(117, 394)
+rotation = 1.5708
 texture = ExtResource("2_0rdsr")
 script = ExtResource("5_ipu61")
+focus = 71.935
+
+[node name="Light3" type="Line2D" parent="."]
+points = PackedVector2Array(0, 350, 117, 350, 970.068, 871.8)
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 350)
+
+[node name="Light4" type="Line2D" parent="."]
+points = PackedVector2Array(0, 400, 117, 400, 1113.54, 316.887)
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 400)
+
+[node name="Light2" type="Line2D" parent="."]
+points = PackedVector2Array(0, 300, 117, 300, 724.724, 1094.15)
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 300)
+
+[node name="Light6" type="Line2D" parent="."]
+points = PackedVector2Array(0, 500, 117, 500, 421.301, 51.6, 1421.09, 72.1349)
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 500)
+
+[node name="Light5" type="Line2D" parent="."]
+points = PackedVector2Array(0, 450, 117, 450, 490.128, 159.53, 822.304, 1102.75)
+width = 5.0
+script = ExtResource("1_72e8q")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 450)
