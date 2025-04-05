@@ -61,14 +61,14 @@ direction = Vector2(1, 0)
 starting_pos = Vector2(0, 350)
 
 [node name="Light4" type="Line2D" parent="."]
-points = PackedVector2Array(0, 400, 117, 400, 1113.54, 316.887)
+points = PackedVector2Array(0, 400, 117, 400, 853.33, 338.589, 253.31, 1138.57)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 400)
 
 [node name="Light2" type="Line2D" parent="."]
-points = PackedVector2Array(0, 300, 117, 300, 203.667, 413.253, 254.407, 137.853, 1161.45, 558.886)
+points = PackedVector2Array(0, 300, 117, 300, 724.724, 1094.15)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(1, 0)
@@ -90,10 +90,9 @@ starting_pos = Vector2(0, 450)
 
 [node name="Mirror4" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(253, 452)
-rotation = -1.57452
+position = Vector2(764, 388)
+rotation = 14.2347
 texture = ExtResource("2_0rdsr")
 script = ExtResource("6_ygxny")
-radius = 40.0
-show_radius = null
-radius_color = null
+radius = -102.085
+radius_color = Color(0.658734, 0.367231, 0.597315, 1)
