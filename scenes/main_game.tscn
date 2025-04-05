@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7xvhqovqpoxc"]
+[gd_scene load_steps=7 format=3 uid="uid://c7xvhqovqpoxc"]
 
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="1_s3esy"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_0rdsr"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="5_ipu61"]
+[ext_resource type="Script" uid="uid://f3f8r8rjqn00" path="res://scripts/face_mirror.gd" id="6_ygxny"]
 
 [node name="Game" type="Node2D"]
 
@@ -67,7 +68,7 @@ direction = Vector2(1, 0)
 starting_pos = Vector2(0, 400)
 
 [node name="Light2" type="Line2D" parent="."]
-points = PackedVector2Array(0, 300, 117, 300, 724.724, 1094.15)
+points = PackedVector2Array(0, 300, 117, 300, 203.667, 413.253, 254.407, 137.853, 1161.45, 558.886)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(1, 0)
@@ -86,3 +87,13 @@ width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 450)
+
+[node name="Mirror4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(253, 452)
+rotation = -1.57452
+texture = ExtResource("2_0rdsr")
+script = ExtResource("6_ygxny")
+radius = 40.0
+show_radius = null
+radius_color = null
