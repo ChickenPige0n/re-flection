@@ -70,14 +70,26 @@ func get_intersection(starting_pos: Vector2, direction: Vector2) -> Vector2:
     
     # 检查交点是否在镜面长度范围内
     if abs(along_mirror) <= length / 2:
-        # 曲面镜的反射面检查
+        # 曲面镜的反射面检查 - 只有半圆部分可以反射
         var normal_dir = mirror_dir.rotated(PI/2)
         var to_intersection = intersection - circle_center
-        var dot_product = to_intersection.normalized().dot(normal_dir)
         
-        # 符号调整，因为球心位于position
-        if (radius > 0 and dot_product > 0) or (radius < 0 and dot_product < 0):
-            return intersection
+        # 判断交点是否在反射面的半圆上 
+        # 正半圆由镜面方向确定，如果交点与法线方向点积为正，表示在反射面一侧
+        var on_reflection_side = to_intersection.dot(normal_dir) > 0
+        
+        if on_reflection_side:
+            # 计算交点处的法线
+            var normal = to_intersection.normalized()
+            if radius < 0:
+                normal = -normal  # 凹面镜法线方向相反
+                
+            # 判断光线是否从反射面方向入射
+            var incident_dot = -ray_dir.dot(normal)  # 入射光与法线夹角的余弦值
+            
+            # 光线与反射面法线夹角小于90度(dot > 0)，说明光线从反射面方向射入
+            if incident_dot > 0:
+                return intersection
             
     return Vector2.ZERO
 
