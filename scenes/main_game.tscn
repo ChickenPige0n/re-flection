@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7xvhqovqpoxc"]
+[gd_scene load_steps=10 format=3 uid="uid://c7xvhqovqpoxc"]
 
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="7_nqdth"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="9_nqdth"]
-[ext_resource type="Script" uid="uid://x76xbmy3gqpx" path="res://scripts/EditManager.gd" id="10_nqdth"]
 
 [node name="Game" type="Node2D"]
 
@@ -37,18 +36,18 @@ texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305, 615.593, 618.898, 615.593, 618.898)
+points = PackedVector2Array(0, 3.305, 379.311, 382.616, 619.384, 545.402, 619.384, 545.402)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(0.707107, 0.707107)
 starting_pos = Vector2(0, 3.305)
 
 [node name="Convex" type="Sprite2D" parent="."]
-position = Vector2(290, 324)
-rotation = 2.25179
+position = Vector2(315, 369)
+rotation = 6.49183
 texture = ExtResource("5_ygxny")
 script = ExtResource("5_ipu61")
-length = 0.0
+focus = 131.94
 movable = false
 rotatable = false
 
@@ -59,8 +58,8 @@ texture = ExtResource("7_nqdth")
 script = ExtResource("7_wi4c7")
 
 [node name="Concave" type="Sprite2D" parent="."]
-position = Vector2(433, 438)
-rotation = -3.87224
+position = Vector2(474, 503)
+rotation = -0.792823
 texture = ExtResource("9_nqdth")
 script = ExtResource("5_ipu61")
 focus = -128.0
@@ -76,4 +75,3 @@ texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
 
 [node name="Node" type="Node" parent="."]
-script = ExtResource("10_nqdth")

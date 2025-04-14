@@ -12,13 +12,9 @@ func calculate_light_direction(intersection: Vector2, light_direction: Vector2) 
 	
 	# 计算入射光方向与透镜轴之间的夹角
 	var light_angle:float = light_direction.angle()
-	var lens_angle:float = rotation  # 直接使用rotation而不是额外计算
+	var lens_angle:float = fmod(rotation + PI, PI)
 	var angle_diff = wrapf(light_angle - lens_angle, -PI, PI)
 	var incident_angle = abs(angle_diff)
-	
-	# 当光线几乎平行于透镜轴时，不发生折射
-	if abs(sin(incident_angle)) < 0.001:
-		return light_direction
 	
 	# 确定透镜类型和焦距的绝对值
 	var is_convex = focus > 0
@@ -30,19 +26,18 @@ func calculate_light_direction(intersection: Vector2, light_direction: Vector2) 
 						 - 2*distance_to_center*focus_sine_ratio*cos(incident_angle))
 	var base_angle = acos((focus_sine_ratio*focus_sine_ratio + third_side*third_side - distance_to_center*distance_to_center) 
 						 / (2*focus_sine_ratio*third_side))
-	
+
 	# 根据透镜类型确定基础偏转角度
 	var deflection_angle = base_angle if is_convex else -base_angle
-	
+
 	# 计算基准角度（从透镜位置到交点的方向）
-	var reference_angle = intersection.angle_to_point(position)
+	var reference_angle = (intersection.angle_to_point(position))
 	
-	# 整合透镜类型判断逻辑
-	var angle_diff1 = abs(light_angle + deflection_angle - reference_angle)
-	var angle_diff2 = abs(light_angle - deflection_angle - reference_angle)
-	if (is_convex && angle_diff1 > angle_diff2) || (!is_convex && angle_diff1 < angle_diff2):
+	var angle_diff1 = light_angle + deflection_angle - reference_angle
+	var angle_diff2 = light_angle - deflection_angle - reference_angle
+	
+	# 使用角度绝对值比较，确保选择正确的偏转方向
+	if (is_convex && abs(angle_diff1) > abs(angle_diff2)) || (!is_convex && abs(angle_diff1) < abs(angle_diff2)):
 		deflection_angle = -deflection_angle
-	
-	# 计算透镜法线向量
-	var lens_normal = Vector2.from_angle(rotation + PI/2).normalized()
+
 	return light_direction.rotated(deflection_angle)

@@ -57,7 +57,6 @@ func _process(delta: float) -> void:
 		self.position = get_global_mouse_position() - bias
 	if rotating:
 		var angle = facing_mouse.angle_to(self.position.direction_to(get_global_mouse_position()))
-		print(angle)
 		self.rotation = facing_origin.rotated(angle).angle()
 	pass
 
