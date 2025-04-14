@@ -4,6 +4,9 @@ extends Line2D
 @export var direction: Vector2 # normalized starting point direction
 @export var starting_pos: Vector2
 
+func _ready() -> void:
+	pass
+
 func _process(_delta: float) -> void:
 	direction = direction.normalized()
 	self.clear_points()
@@ -12,6 +15,7 @@ func _process(_delta: float) -> void:
 	var now_direction = direction
 	
 	var components = get_parent().get_children().filter(func(it): return it is Intersectable)
+	var photosensitives = get_parent().get_children().filter(func(it): return it is Photosensitive)
 	
 	var max_reflections = 100  # Prevent infinite loops
 	var reflection_count = 0
@@ -39,11 +43,17 @@ func _process(_delta: float) -> void:
 		
 		# If we found a component, add the reflection
 		if closest_component:
+			#判断感光
+			for photosensitive in photosensitives:
+				photosensitive.shine(now_position, now_direction, closest_component_point)
+
 			self.add_point(closest_component_point)
 			now_position = closest_component_point
 			now_direction = closest_component.calculate_light_direction(closest_component_point, now_direction)
 			reflection_count += 1
 		else:
+			for photosensitive in photosensitives:
+				photosensitive.shine(now_position, now_direction, Vector2.ZERO)
 			# No more intersections found
 			break
 	
