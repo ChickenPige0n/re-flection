@@ -22,6 +22,13 @@ offset_bottom = 648.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="Mirror5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(894, 547)
+rotation = -0.785398
+texture = ExtResource("2_0rdsr")
+script = ExtResource("1_s3esy")
+
 [node name="Mirror" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(616, 611)

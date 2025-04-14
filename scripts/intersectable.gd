@@ -9,6 +9,7 @@ class_name Intersectable # 可相交的
 func calculate_light_direction(_intersection: Vector2 ,_light_direction: Vector2):
 	return Vector2.ZERO
 	
+	
 
 func get_intersection(starting_pos: Vector2, direction: Vector2) -> Vector2:
 	# VectorDebugTool.get_instance().clear()

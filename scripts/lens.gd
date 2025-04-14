@@ -11,9 +11,10 @@ func calculate_light_direction(intersection: Vector2, light_direction: Vector2) 
 	var distance_to_center = intersection.distance_to(position)
 	
 	# 计算入射光方向与透镜轴之间的夹角
-	var light_angle = light_direction.angle()
-	var lens_angle = rotation  # 直接使用rotation而不是额外计算
-	var incident_angle = light_angle - lens_angle
+	var light_angle:float = light_direction.angle()
+	var lens_angle:float = rotation  # 直接使用rotation而不是额外计算
+	var angle_diff = wrapf(light_angle - lens_angle, -PI, PI)
+	var incident_angle = abs(angle_diff)
 	
 	# 当光线几乎平行于透镜轴时，不发生折射
 	if abs(sin(incident_angle)) < 0.001:
@@ -44,4 +45,4 @@ func calculate_light_direction(intersection: Vector2, light_direction: Vector2) 
 	
 	# 计算透镜法线向量
 	var lens_normal = Vector2.from_angle(rotation + PI/2).normalized()
-	return light_direction.rotated(deflection_angle).bounce(lens_normal)
+	return light_direction.rotated(deflection_angle)
