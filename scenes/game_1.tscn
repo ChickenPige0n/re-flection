@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://cudmcaxwifmrs"]
+
+[ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_luixn"]
+[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_fxokx"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_6xfxu"]
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_bwy7h"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="5_ygnno"]
+[ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_5lnxe"]
+
+[node name="Game" type="Node2D"]
+
+[node name="EditUi" parent="." instance=ExtResource("1_luixn")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Mirror1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(206, 592)
+rotation = -5.87537
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")
+
+[node name="Light" type="Line2D" parent="."]
+points = PackedVector2Array(0, 3.305, 208.483, 593.073, 511.354, 459.495, 455.069, 46.3364, 726.437, 619.234, 1011.72, 597.913, 1191.6, -385.776)
+width = 5.0
+script = ExtResource("4_bwy7h")
+direction = Vector2(0.333289, 0.942825)
+starting_pos = Vector2(0, 3.305)
+
+[node name="Photosensitive" type="Sprite2D" parent="."]
+position = Vector2(1119, 33)
+rotation = 0.00171612
+texture = ExtResource("5_ygnno")
+script = ExtResource("8_5lnxe")
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1002, 106)
+rotation = 4.08815
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")
+
+[node name="Mirror3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(468, 537)
+rotation = -7.34397
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")
+
+[node name="Mirror4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(399, 63)
+rotation = -9.71366
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")
+
+[node name="Mirror5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(659, 580)
+rotation = -5.75627
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")
+
+[node name="Mirror6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1055, 559)
+rotation = -7.01545
+texture = ExtResource("2_fxokx")
+script = ExtResource("3_6xfxu")

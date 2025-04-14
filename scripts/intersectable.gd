@@ -41,3 +41,47 @@ func get_line_intersection(line1_start: Vector2, line1_end: Vector2, line2_start
 	if ua < 0 or ua > 1 or ub < 0 or ub > 1:
 		return null # Intersection is outside the segments
 	return line1_start + ua * (line1_end - line1_start)
+
+
+#Move and rotate functions
+var is_selected: bool = false
+var dragging: bool = false
+var rotating: bool = false
+var bias: Vector2 = Vector2.ZERO
+var facing_mouse: Vector2 = Vector2.ZERO
+var facing_origin: Vector2 = Vector2.ZERO
+
+func _process(delta: float) -> void:
+	if dragging:
+		self.position = get_global_mouse_position() - bias
+	if rotating:
+		var angle = facing_mouse.angle_to(self.position.direction_to(get_global_mouse_position()))
+		print(angle)
+		self.rotation = facing_origin.rotated(angle).angle()
+	pass
+
+func _input(event):
+	if event is InputEventMouseButton:
+		handle_click(event)
+
+func handle_click(event: InputEventMouseButton):
+	if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.is_pressed():
+			if event.ctrl_pressed:
+				if rotatable and is_selected:
+					rotating = true
+					facing_mouse = self.position.direction_to(event.position)
+					facing_origin = Vector2.from_angle(self.rotation)
+			elif self.get_rect().has_point(to_local(event.position)):
+				is_selected = true
+				if movable:
+					dragging = true
+					bias = event.position - self.position
+				
+			else:
+				is_selected = false
+		else:
+			dragging = false
+			rotating = false
+				
+		

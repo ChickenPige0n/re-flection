@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=3 uid="uid://dflbus2hljpdw"]
+
+[ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_w46gi"]
+[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_khyur"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_r1ad8"]
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_1uv66"]
+[ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_e0nre"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="5_w46gi"]
+[ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_ugac3"]
+[ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_2px5s"]
+[ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="9_cyvdb"]
+
+[node name="Game" type="Node2D"]
+
+[node name="EditUi" parent="." instance=ExtResource("1_w46gi")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Light" type="Line2D" parent="."]
+points = PackedVector2Array(0, 3.305, 900.679, 428.426, 900.679, 428.426)
+width = 5.0
+script = ExtResource("4_1uv66")
+direction = Vector2(0.904326, 0.426842)
+starting_pos = Vector2(0, 3.305)
+
+[node name="Convex" type="Sprite2D" parent="."]
+position = Vector2(965, 127)
+rotation = 8.48359
+texture = ExtResource("5_e0nre")
+script = ExtResource("6_ugac3")
+length = 0.0
+movable = false
+rotatable = false
+
+[node name="Photosensitive" type="Sprite2D" parent="."]
+position = Vector2(1120, 32)
+rotation = 0.00156415
+texture = ExtResource("5_w46gi")
+script = ExtResource("8_2px5s")
+
+[node name="Concave" type="Sprite2D" parent="."]
+position = Vector2(390, 243)
+rotation = -4.98309
+texture = ExtResource("9_cyvdb")
+script = ExtResource("6_ugac3")
+focus = -128.0
+length = 0.0
+movable = false
+rotatable = false
+
+[node name="Mirror1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1025, 645)
+rotation = -6.28109
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1147, 522)
+rotation = -1.57569
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Mirror3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(901, 522)
+rotation = 1.56737
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Photosensitive2" type="Sprite2D" parent="."]
+position = Vector2(1026, 521)
+rotation = 0.00156415
+texture = ExtResource("5_w46gi")
+script = ExtResource("8_2px5s")
+
+[node name="Mirror4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(126, 643)
+rotation = -6.28109
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Mirror5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.99982, 520)
+rotation = 1.56737
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Mirror6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(248, 520)
+rotation = -1.57569
+texture = ExtResource("2_khyur")
+script = ExtResource("3_r1ad8")
+
+[node name="Photosensitive3" type="Sprite2D" parent="."]
+position = Vector2(123, 531)
+rotation = 0.00156415
+texture = ExtResource("5_w46gi")
+script = ExtResource("8_2px5s")
+
+[node name="Concave2" type="Sprite2D" parent="."]
+position = Vector2(115, 135)
+rotation = -4.20871
+texture = ExtResource("9_cyvdb")
+script = ExtResource("6_ugac3")
+focus = -128.0
+length = 0.0
+movable = false
+rotatable = false
+
+[node name="Convex2" type="Sprite2D" parent="."]
+position = Vector2(275, 98)
+rotation = 8.90173
+texture = ExtResource("5_e0nre")
+script = ExtResource("6_ugac3")
+length = 0.0
+movable = false
+rotatable = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ye4upg4e1mj"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ye4upg4e1mj"]
 
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_mkcba"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_ydant"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_bcusq"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_1wx16"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_840ub"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="7_ydant"]
 
 [node name="Game" type="Node2D"]
 
@@ -41,7 +42,7 @@ texture = ExtResource("2_ydant")
 script = ExtResource("3_fwljx")
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305)
+points = PackedVector2Array(0, 3.305, 246.628, 249.933, 302.218, 113.144, 451.862, 148.304, 451.862, 148.304)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(0.707107, 0.707107)
@@ -52,37 +53,40 @@ position = Vector2(183, 406)
 rotation = 1.5708
 texture = ExtResource("5_bcusq")
 script = ExtResource("6_1wx16")
+length = 0.0
+movable = false
+rotatable = false
 
 [node name="Light3" type="Line2D" parent="."]
-points = PackedVector2Array(0, 350)
+points = PackedVector2Array(0, 350, 1000, 350)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 350)
 
 [node name="Light4" type="Line2D" parent="."]
-points = PackedVector2Array(0, 400)
+points = PackedVector2Array(0, 400, 1000, 400)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 400)
 
 [node name="Light2" type="Line2D" parent="."]
-points = PackedVector2Array(0, 300)
+points = PackedVector2Array(0, 300, 1000, 300)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 300)
 
 [node name="Light6" type="Line2D" parent="."]
-points = PackedVector2Array(0, 500)
+points = PackedVector2Array(0, 500, 1000, 500)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 500)
 
 [node name="Light5" type="Line2D" parent="."]
-points = PackedVector2Array(0, 450)
+points = PackedVector2Array(0, 450, 1000, 450)
 width = 5.0
 script = ExtResource("4_pob4m")
 direction = Vector2(1, 0)
@@ -90,4 +94,5 @@ starting_pos = Vector2(0, 450)
 
 [node name="Photosensitive" type="Sprite2D" parent="."]
 position = Vector2(759, 117)
+texture = ExtResource("7_ydant")
 script = ExtResource("7_840ub")

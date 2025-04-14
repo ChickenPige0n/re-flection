@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7xvhqovqpoxc"]
+[gd_scene load_steps=11 format=3 uid="uid://c7xvhqovqpoxc"]
 
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_0rdsr"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="5_ipu61"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_ygxny"]
-[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="7_70vka"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="7_nqdth"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="9_nqdth"]
+[ext_resource type="Script" uid="uid://x76xbmy3gqpx" path="res://scripts/EditManager.gd" id="10_nqdth"]
 
 [node name="Game" type="Node2D"]
 
@@ -24,35 +25,41 @@ grow_vertical = 1
 [node name="Mirror" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(616, 611)
-rotation = -6.06718
+rotation = -4.66085
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305, 471.688, 474.993, 527.07, 591.486, 746.898, 408.197)
+points = PackedVector2Array(0, 3.305, 615.593, 618.898, 615.593, 618.898)
 width = 5.0
 script = ExtResource("1_72e8q")
 direction = Vector2(0.707107, 0.707107)
 starting_pos = Vector2(0, 3.305)
 
 [node name="Convex" type="Sprite2D" parent="."]
-position = Vector2(755, 444)
-rotation = 7.63143
+position = Vector2(290, 324)
+rotation = 2.25179
 texture = ExtResource("5_ygxny")
 script = ExtResource("5_ipu61")
+length = 0.0
+movable = false
+rotatable = false
 
 [node name="Photosensitive" type="Sprite2D" parent="."]
-position = Vector2(1010, 479)
+position = Vector2(965, 283)
 rotation = -0.0441695
-texture = ExtResource("7_70vka")
+texture = ExtResource("7_nqdth")
 script = ExtResource("7_wi4c7")
 
 [node name="Concave" type="Sprite2D" parent="."]
-position = Vector2(494, 455)
+position = Vector2(433, 438)
 rotation = -3.87224
 texture = ExtResource("9_nqdth")
 script = ExtResource("5_ipu61")
 focus = -128.0
+length = 0.0
+movable = false
+rotatable = false
 
 [node name="Mirror2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -60,3 +67,6 @@ position = Vector2(661, 101)
 rotation = 0.432015
 texture = ExtResource("2_0rdsr")
 script = ExtResource("1_s3esy")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("10_nqdth")

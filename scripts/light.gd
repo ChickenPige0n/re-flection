@@ -4,6 +4,9 @@ extends Line2D
 @export var direction: Vector2 # normalized starting point direction
 @export var starting_pos: Vector2
 
+func _ready() -> void:
+	pass
+
 func _process(_delta: float) -> void:
 	direction = direction.normalized()
 	self.clear_points()
