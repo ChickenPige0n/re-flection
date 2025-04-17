@@ -22,11 +22,12 @@ func get_intersection(starting_pos: Vector2, direction: Vector2) -> Vector2:
 	var self_start = self_center - self_direction * self_half_length
 	var self_end = self_center + self_direction * self_half_length
 	var line_start = starting_pos
-	var line_end = starting_pos + direction * 1000 # Arbitrary large length
+	var line_end = starting_pos + direction * 10000 # Arbitrary large length
 	var line_intersection = get_line_intersection(self_start, self_end, line_start, line_end)
 	if line_intersection:
 		return line_intersection
 	return Vector2.ZERO # Return a default Vector2 value when no intersection is found
+
 
 func get_direction_xy() -> Vector2:
 	return Vector2.from_angle(rotation) # Get the direction of the mirror

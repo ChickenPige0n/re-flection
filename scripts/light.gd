@@ -1,4 +1,5 @@
 @tool
+class_name Light
 extends Line2D
 
 @export var direction: Vector2 # normalized starting point direction
@@ -21,7 +22,7 @@ func _process(_delta: float) -> void:
 	var reflection_count = 0
 	
 	while reflection_count < max_reflections and now_position != Vector2.ZERO:
-		var closest_component = null
+		var closest_component: Intersectable = null
 		var closest_component_point = Vector2.ZERO
 		var closest_component_distance = INF
 		var last_component = closest_component  # Track the last component we reflected off
@@ -36,7 +37,7 @@ func _process(_delta: float) -> void:
 			if intersection != Vector2.ZERO:
 				var distance = now_position.distance_to(intersection)
 				# Use a small epsilon to prevent detecting intersections too close to starting point
-				if distance > 0.001 and distance < closest_component_distance:
+				if distance > 0.01 and distance < closest_component_distance:
 					closest_component_distance = distance
 					closest_component_point = intersection
 					closest_component = component
@@ -50,6 +51,8 @@ func _process(_delta: float) -> void:
 			self.add_point(closest_component_point)
 			now_position = closest_component_point
 			now_direction = closest_component.calculate_light_direction(closest_component_point, now_direction)
+			if now_direction == Vector2.ZERO:
+				break
 			reflection_count += 1
 		else:
 			for photosensitive in photosensitives:
@@ -58,4 +61,4 @@ func _process(_delta: float) -> void:
 			break
 	
 	# Add the final ray extending outward
-	self.add_point(now_position + now_direction * 1000)
+	self.add_point(now_position + now_direction * 10000)

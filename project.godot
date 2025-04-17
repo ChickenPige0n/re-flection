@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Re-flection"
-run/main_scene="uid://c7xvhqovqpoxc"
+run/main_scene="uid://d3ccoe6lkb0te"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

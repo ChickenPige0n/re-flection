@@ -5,20 +5,22 @@ extends Sprite2D
 
 var active_texture = preload("res://images/photosensitive/photosensitive_active.png")
 var inactive_texture = preload("res://images/photosensitive/photosensitive_inactive.png")
-var active : bool = false
+var active_flag : bool = false
 var radius = 32
 
-
+var active = false
 
 func _ready():
 	set_texture(inactive_texture)
 
 func _process(delta):
-	if active:
+	if active_flag:
+		active = true
 		set_texture(active_texture)
 	else:
+		active = false
 		set_texture(inactive_texture)
-	active = false
+	active_flag = false
 		
 
 func shine(starting_pos: Vector2, direction: Vector2, ending_pos: Vector2) -> void:
@@ -35,7 +37,7 @@ func shine(starting_pos: Vector2, direction: Vector2, ending_pos: Vector2) -> vo
 	#确保照的到
 	if abs (starting_pos.distance_to(position) * sin(angle)) > radius:
 		return 
-	active = true
+	active_flag = true
 	
 
 

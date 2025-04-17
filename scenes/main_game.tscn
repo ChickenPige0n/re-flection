@@ -1,16 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7xvhqovqpoxc"]
+[gd_scene load_steps=11 format=3 uid="uid://c7xvhqovqpoxc"]
 
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_d2op2"]
+[ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_nqdth"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="1_s3esy"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_0rdsr"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="5_ipu61"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_ygxny"]
-[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="7_nqdth"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_wi4c7"]
+[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="8_nqdth"]
 [ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="9_nqdth"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_nqdth")
 
 [node name="EditUi" parent="." instance=ExtResource("1_d2op2")]
 anchors_preset = 0
@@ -54,7 +56,7 @@ rotatable = false
 [node name="Photosensitive" type="Sprite2D" parent="."]
 position = Vector2(965, 283)
 rotation = -0.0441695
-texture = ExtResource("7_nqdth")
+texture = ExtResource("8_nqdth")
 script = ExtResource("7_wi4c7")
 
 [node name="Concave" type="Sprite2D" parent="."]

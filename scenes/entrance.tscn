@@ -1,0 +1,290 @@
+[gd_scene load_steps=23 format=3 uid="uid://d3ccoe6lkb0te"]
+
+[ext_resource type="Script" uid="uid://685degh4is2j" path="res://scripts/entrance_controller.gd" id="1_aidi3"]
+[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_gm1gp"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_iyrkg"]
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_5dtqe"]
+[ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_iyrkg"]
+[ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_5dtqe"]
+[ext_resource type="PackedScene" uid="uid://3mv4natc12ar" path="res://scenes/entrance_scene_button.tscn" id="7_5dtqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyrkg"]
+font_size = 70
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyrkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dtqe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y26w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xq8y2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lin0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eknrl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksahx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ncymu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lkfru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dcbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0q76"]
+
+[sub_resource type="Animation" id="Animation_5dtqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(772, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+
+[sub_resource type="Animation" id="Animation_iyrkg"]
+resource_name = "goto_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.34151, 1),
+"update": 0,
+"values": [Vector2(772, 224), Vector2(-772, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.233258, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-700, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.233258, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2y26w"]
+_data = {
+&"RESET": SubResource("Animation_5dtqe"),
+&"goto_select": SubResource("Animation_iyrkg")
+}
+
+[node name="Entrance" type="Control" node_paths=PackedStringArray("exampleLightUp", "exampleLightDown", "levelContainer", "animator")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aidi3")
+exampleLightUp = NodePath("Node2D/LightUp")
+exampleLightDown = NodePath("Node2D/LightDown")
+levelContainer = NodePath("Control/MarginContainer/FlowContainer")
+changeSceneButton = ExtResource("7_5dtqe")
+animator = NodePath("AnimationPlayer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "镜影溯光"
+label_settings = SubResource("LabelSettings_iyrkg")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iyrkg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5dtqe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2y26w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xq8y2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lin0h")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_eknrl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ksahx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ncymu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lkfru")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3dcbn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j0q76")
+text = "开始游戏"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="LightUp" type="Line2D" parent="Node2D"]
+points = PackedVector2Array(0, 1, 319.371, 1, 446.913, 31.9124, 560.874, 502.126, -9157.77, -1853.3)
+width = 5.0
+script = ExtResource("4_5dtqe")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 1)
+
+[node name="LightDown" type="Line2D" parent="Node2D"]
+points = PackedVector2Array(0, 647, 307.43, 647, 439.242, 623.758, 529.107, 114.107, -9318.99, 1850.51)
+width = 5.0
+script = ExtResource("4_5dtqe")
+direction = Vector2(1, 0)
+starting_pos = Vector2(0, 647)
+
+[node name="Mirror5" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(296, 648)
+rotation = -0.0872665
+texture = ExtResource("2_gm1gp")
+script = ExtResource("3_iyrkg")
+
+[node name="Mirror3" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(608, 324)
+rotation = -1.5708
+texture = ExtResource("2_gm1gp")
+script = ExtResource("3_iyrkg")
+length = 512.0
+
+[node name="Mirror2" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(515, 548)
+rotation = -0.785398
+texture = ExtResource("2_gm1gp")
+script = ExtResource("3_iyrkg")
+length = 512.0
+
+[node name="Mirror4" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(515, 100)
+rotation = -2.35619
+texture = ExtResource("2_gm1gp")
+script = ExtResource("3_iyrkg")
+length = 512.0
+
+[node name="Convex2" type="Sprite2D" parent="Node2D"]
+position = Vector2(367, 324)
+rotation = 1.5708
+texture = ExtResource("5_iyrkg")
+script = ExtResource("6_5dtqe")
+movable = false
+rotatable = false
+
+[node name="Mirror6" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(311, 0)
+rotation = -3.0227
+texture = ExtResource("2_gm1gp")
+script = ExtResource("3_iyrkg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2y26w")
+}
+
+[node name="Control" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_right = 2304.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+
+[node name="Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "< 返回"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_back_button_pressed"]
