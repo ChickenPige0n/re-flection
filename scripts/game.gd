@@ -5,7 +5,8 @@ extends Node2D
 var judgePoints
 
 var timeCost = 0.0
-
+@export
+var hintLabel: Label
 signal completed(timeCost: float)
 
 func _ready() -> void:
@@ -13,14 +14,18 @@ func _ready() -> void:
 var winning: bool = false
 func _process(delta: float) -> void:
 	timeCost += delta
+	if timeCost > 5 and hintLabel:
+		var tween = hintLabel.create_tween().bind_node(hintLabel).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(hintLabel, "position", Vector2(250, 20), 2)
 	var win:bool = true
 	for point in judgePoints:
 		if !point.active:
 			win = false
 	if win and not winning:
 		winning = true
-		
+		# todo: replace with packed sprite
 		var label:Label = Label.new()
+		label.label_settings = LabelSettings.new()
 		label.text = "游戏结束"
 		label.position = Vector2(1152,648) / 2
 		#label.pivot_offset = label.size / 2
@@ -30,7 +35,7 @@ func _process(delta: float) -> void:
 		.bind_node(label)\
 		.set_ease(Tween.EASE_OUT)\
 		.set_trans(Tween.TRANS_CUBIC)\
-		.tween_property(label, "scale", Vector2(4,4), 3)
+		.tween_property(label.label_settings, "font_size", 32, 3)
 		
 		var timer = Timer.new()
 		timer.wait_time = 3

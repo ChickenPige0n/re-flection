@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dflbus2hljpdw"]
+[gd_scene load_steps=12 format=3 uid="uid://dflbus2hljpdw"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_khyur"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_w46gi"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_khyur"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_r1ad8"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_1uv66"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="4_r1ad8"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_e0nre"]
 [ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="5_w46gi"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_ugac3"]
@@ -18,42 +19,24 @@ script = ExtResource("1_khyur")
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_top = 10.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 658.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3.305, 247.444, 406.284, 105.289, 642.957, 2.83105, 470.743, 5056.82, -8158.11)
+points = PackedVector2Array(0, 3.305, 202.91, 333.758, 247.41, 399.494, 86.0756, 642.916, 2.9875, 516.405, 127.798, 323.497, 511.958, 176.498, 10248.3, -2104.5)
 width = 5.0
 script = ExtResource("4_1uv66")
 direction = Vector2(0.523263, 0.852171)
 starting_pos = Vector2(0, 3.305)
 
-[node name="Convex" type="Sprite2D" parent="."]
-position = Vector2(965, 127)
-rotation = 8.48359
-texture = ExtResource("5_e0nre")
-script = ExtResource("6_ugac3")
-length = 0.0
-movable = false
-rotatable = false
-
 [node name="Photosensitive" type="Sprite2D" parent="."]
-position = Vector2(1069, 80)
+position = Vector2(1119, 33)
 rotation = 0.00347358
-texture = ExtResource("5_w46gi")
+texture = ExtResource("4_r1ad8")
 script = ExtResource("8_2px5s")
-
-[node name="Concave" type="Sprite2D" parent="."]
-position = Vector2(390, 243)
-rotation = -4.98309
-texture = ExtResource("9_cyvdb")
-script = ExtResource("6_ugac3")
-focus = -128.0
-length = 0.0
-movable = false
-rotatable = false
 
 [node name="Mirror1" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -61,6 +44,8 @@ position = Vector2(1025, 645)
 rotation = -6.28109
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Mirror2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -68,6 +53,8 @@ position = Vector2(1147, 522)
 rotation = -1.57569
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Mirror3" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -75,6 +62,8 @@ position = Vector2(901, 522)
 rotation = 1.56737
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Photosensitive2" type="Sprite2D" parent="."]
 position = Vector2(1026, 521)
@@ -88,6 +77,8 @@ position = Vector2(126, 643)
 rotation = -6.28109
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Mirror5" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -95,6 +86,8 @@ position = Vector2(2.99982, 520)
 rotation = 1.56737
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Mirror6" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -102,28 +95,41 @@ position = Vector2(248, 520)
 rotation = -1.57569
 texture = ExtResource("2_khyur")
 script = ExtResource("3_r1ad8")
+movable = false
+rotatable = false
 
 [node name="Photosensitive3" type="Sprite2D" parent="."]
 position = Vector2(123, 531)
 rotation = 0.00156415
-texture = ExtResource("5_w46gi")
+texture = ExtResource("4_r1ad8")
 script = ExtResource("8_2px5s")
 
-[node name="Concave2" type="Sprite2D" parent="."]
-position = Vector2(115, 135)
-rotation = -4.20871
+[node name="Convex1" type="Sprite2D" parent="."]
+position = Vector2(585, 484)
+rotation = 14.333
+texture = ExtResource("5_e0nre")
+script = ExtResource("6_ugac3")
+rotatable = false
+
+[node name="Convex" type="Sprite2D" parent="."]
+position = Vector2(212, 335)
+rotation = 3.27736
+texture = ExtResource("5_e0nre")
+script = ExtResource("6_ugac3")
+movable = false
+
+[node name="Concave" type="Sprite2D" parent="."]
+position = Vector2(509, 158)
+rotation = -1.72934
 texture = ExtResource("9_cyvdb")
 script = ExtResource("6_ugac3")
 focus = -128.0
-length = 0.0
-movable = false
 rotatable = false
 
-[node name="Convex2" type="Sprite2D" parent="."]
-position = Vector2(275, 98)
-rotation = 8.90173
-texture = ExtResource("5_e0nre")
+[node name="Concave2" type="Sprite2D" parent="."]
+position = Vector2(794, 163)
+rotation = -6.52835
+texture = ExtResource("9_cyvdb")
 script = ExtResource("6_ugac3")
-length = 0.0
+focus = -128.0
 movable = false
-rotatable = false

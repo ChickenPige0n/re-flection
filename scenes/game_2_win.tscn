@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0hbu5ratn4vd"]
+
+[ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_fb0uj"]
+[ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="2_c85lg"]
+[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="3_jdi35"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="4_md35h"]
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="5_04w7j"]
+[ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="6_11tig"]
+[ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="7_expeq"]
+[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="8_fb0uj"]
+[ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="9_2r0de"]
+[ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="10_otcl1"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_fb0uj")
+
+[node name="EditUi" parent="." instance=ExtResource("2_c85lg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Mirror1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(726, 586)
+rotation = -12.1192
+texture = ExtResource("3_jdi35")
+script = ExtResource("4_md35h")
+
+[node name="Light" type="Line2D" parent="."]
+points = PackedVector2Array(0, 3.305, 268.901, 98.3615, 984.019, 93.0527, 997.944, 603.058, 751.897, 416.769, 561.294, 267.172, 720.186, 495.667, 989.507, 607.397, 3244.9, -9134.94)
+width = 5.0
+script = ExtResource("5_04w7j")
+direction = Vector2(0.942825, 0.333289)
+starting_pos = Vector2(0, 3.305)
+
+[node name="Convex" type="Sprite2D" parent="."]
+position = Vector2(751, 419)
+rotation = 5.09455
+texture = ExtResource("6_11tig")
+script = ExtResource("7_expeq")
+
+[node name="Photosensitive" type="Sprite2D" parent="."]
+position = Vector2(1121, 32)
+rotation = -0.00122586
+texture = ExtResource("8_fb0uj")
+script = ExtResource("9_2r0de")
+
+[node name="Concave" type="Sprite2D" parent="."]
+position = Vector2(244, 136)
+rotation = -4.12792
+texture = ExtResource("10_otcl1")
+script = ExtResource("7_expeq")
+focus = -128.0
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(553, 275)
+rotation = -3.89808
+texture = ExtResource("3_jdi35")
+script = ExtResource("4_md35h")
+
+[node name="Mirror3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1035, 584)
+rotation = -6.75821
+texture = ExtResource("3_jdi35")
+script = ExtResource("4_md35h")
+
+[node name="Mirror4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(985, 94)
+rotation = -8.65674
+texture = ExtResource("3_jdi35")
+script = ExtResource("4_md35h")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjnyqvlgxo3fc"]
+
+[ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_7m2qd"]
+[ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="2_m0qo5"]
+[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="3_73mcg"]
+[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="4_n0d8q"]
+[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="5_5a4ud"]
+[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="6_7m2qd"]
+[ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_4bv5g"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7m2qd")
+
+[node name="EditUi" parent="." instance=ExtResource("2_m0qo5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Mirror1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(139, 579)
+rotation = -5.87537
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+rotatable = false
+
+[node name="Light" type="Line2D" parent="."]
+points = PackedVector2Array(0, 3.305, 215.136, 611.894, 495.199, 488.375, 435.762, 52.0745, 696.033, 601.545, 1035.93, 576.142, 2834.74, -9260.74)
+width = 5.0
+script = ExtResource("5_5a4ud")
+direction = Vector2(0.333289, 0.942825)
+starting_pos = Vector2(0, 3.305)
+
+[node name="Photosensitive" type="Sprite2D" parent="."]
+position = Vector2(1119, 33)
+rotation = 0.00171612
+texture = ExtResource("6_7m2qd")
+script = ExtResource("7_4bv5g")
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1002, 106)
+rotation = 4.08815
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+movable = false
+rotatable = false
+
+[node name="Mirror3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(468, 537)
+rotation = -7.34397
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+movable = false
+rotatable = false
+
+[node name="Mirror4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(399, 63)
+rotation = -9.71366
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+movable = false
+rotatable = false
+
+[node name="Mirror5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(659, 580)
+rotation = -5.75627
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+movable = false
+rotatable = false
+
+[node name="Mirror6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1055, 559)
+rotation = -7.01545
+texture = ExtResource("3_73mcg")
+script = ExtResource("4_n0d8q")
+movable = false
+rotatable = false
