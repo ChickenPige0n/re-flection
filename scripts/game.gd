@@ -11,7 +11,9 @@ signal completed(timeCost: float)
 
 func _ready() -> void:
 	judgePoints = get_children().filter(func(it): return it is Photosensitive) as Array[Photosensitive]
+
 var winning: bool = false
+
 func _process(delta: float) -> void:
 	timeCost += delta
 	if timeCost > 5 and hintLabel:
@@ -23,6 +25,7 @@ func _process(delta: float) -> void:
 			win = false
 	if win and not winning:
 		winning = true
+		endInput()
 		# todo: replace with packed sprite
 		var label:Label = Label.new()
 		label.label_settings = LabelSettings.new()
@@ -46,3 +49,10 @@ func gameOver():
 	print("game is over")
 	completed.emit(timeCost)
 	self.queue_free()
+
+func endInput():
+	var components = get_children().filter(func(it): return it is Intersectable)
+	for component in components:
+		component.is_selected = false
+		component.dragging = false
+		component.rotating = false

@@ -16,9 +16,8 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_b4gt0"]
 font_size = 32
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("hintLabel")]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_b4gt0")
-hintLabel = NodePath("Label2")
 
 [node name="Light" type="Line2D" parent="."]
 points = PackedVector2Array(0, 300, 10000, 300)
@@ -63,14 +62,12 @@ length = 512.0
 [node name="Photosensitive2" type="Sprite2D" parent="."]
 position = Vector2(913, 228)
 rotation = -0.00245172
-scale = Vector2(1, 1)
 texture = ExtResource("8_b4gt0")
 script = ExtResource("8_5m3wm")
 
 [node name="Photosensitive3" type="Sprite2D" parent="."]
 position = Vector2(621, 560)
 rotation = -0.00245172
-scale = Vector2(1, 1)
 texture = ExtResource("8_b4gt0")
 script = ExtResource("8_5m3wm")
 

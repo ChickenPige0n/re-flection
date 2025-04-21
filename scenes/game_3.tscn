@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dflbus2hljpdw"]
+[gd_scene load_steps=15 format=3 uid="uid://dflbus2hljpdw"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_khyur"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_w46gi"]
@@ -6,11 +6,14 @@
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_r1ad8"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_1uv66"]
 [ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="4_r1ad8"]
-[ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_e0nre"]
 [ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="5_w46gi"]
+[ext_resource type="Texture2D" uid="uid://86lfxhjar7bl" path="res://images/mirror_immovable_irrotatable.png" id="6_p30vf"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_ugac3"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_2px5s"]
-[ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="9_cyvdb"]
+[ext_resource type="Texture2D" uid="uid://dcsp72esief71" path="res://images/convex_movable_irrotatable.png" id="10_2px5s"]
+[ext_resource type="Texture2D" uid="uid://bpc0a2hec82xu" path="res://images/convex_immovable_rotatable.png" id="12_cyvdb"]
+[ext_resource type="Texture2D" uid="uid://bxa17agh5j6rn" path="res://images/concave_movable_irrotatable.png" id="13_pnpoq"]
+[ext_resource type="Texture2D" uid="uid://dl0iqg8t4a2t0" path="res://images/concave_immovable_rotatable.png" id="14_ibm7l"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_khyur")
@@ -42,7 +45,7 @@ script = ExtResource("8_2px5s")
 texture_filter = 1
 position = Vector2(1025, 645)
 rotation = -6.28109
-texture = ExtResource("2_khyur")
+texture = ExtResource("6_p30vf")
 script = ExtResource("3_r1ad8")
 movable = false
 rotatable = false
@@ -51,7 +54,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(1147, 522)
 rotation = -1.57569
-texture = ExtResource("2_khyur")
+texture = ExtResource("6_p30vf")
 script = ExtResource("3_r1ad8")
 movable = false
 rotatable = false
@@ -60,7 +63,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(901, 522)
 rotation = 1.56737
-texture = ExtResource("2_khyur")
+texture = ExtResource("6_p30vf")
 script = ExtResource("3_r1ad8")
 movable = false
 rotatable = false
@@ -107,21 +110,21 @@ script = ExtResource("8_2px5s")
 [node name="Convex1" type="Sprite2D" parent="."]
 position = Vector2(585, 484)
 rotation = 14.333
-texture = ExtResource("5_e0nre")
+texture = ExtResource("10_2px5s")
 script = ExtResource("6_ugac3")
 rotatable = false
 
 [node name="Convex" type="Sprite2D" parent="."]
 position = Vector2(212, 335)
 rotation = 3.27736
-texture = ExtResource("5_e0nre")
+texture = ExtResource("12_cyvdb")
 script = ExtResource("6_ugac3")
 movable = false
 
 [node name="Concave" type="Sprite2D" parent="."]
 position = Vector2(509, 158)
 rotation = -1.72934
-texture = ExtResource("9_cyvdb")
+texture = ExtResource("13_pnpoq")
 script = ExtResource("6_ugac3")
 focus = -128.0
 rotatable = false
@@ -129,7 +132,7 @@ rotatable = false
 [node name="Concave2" type="Sprite2D" parent="."]
 position = Vector2(794, 163)
 rotation = -6.52835
-texture = ExtResource("9_cyvdb")
+texture = ExtResource("14_ibm7l")
 script = ExtResource("6_ugac3")
 focus = -128.0
 movable = false

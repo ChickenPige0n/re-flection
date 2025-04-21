@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cudmcaxwifmrs"]
+[gd_scene load_steps=10 format=3 uid="uid://cudmcaxwifmrs"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_8rbwk"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_luixn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_bwy7h"]
 [ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="6_8rbwk"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_5lnxe"]
+[ext_resource type="Texture2D" uid="uid://86lfxhjar7bl" path="res://images/mirror_immovable_irrotatable.png" id="8_lyscb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8rbwk"]
 font_size = 32
@@ -49,7 +50,7 @@ script = ExtResource("8_5lnxe")
 texture_filter = 1
 position = Vector2(1002, 106)
 rotation = 4.08815
-texture = ExtResource("2_fxokx")
+texture = ExtResource("8_lyscb")
 script = ExtResource("3_6xfxu")
 movable = false
 rotatable = false
@@ -58,7 +59,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(468, 537)
 rotation = -7.34397
-texture = ExtResource("2_fxokx")
+texture = ExtResource("8_lyscb")
 script = ExtResource("3_6xfxu")
 movable = false
 rotatable = false
@@ -67,7 +68,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(399, 63)
 rotation = -9.71366
-texture = ExtResource("2_fxokx")
+texture = ExtResource("8_lyscb")
 script = ExtResource("3_6xfxu")
 movable = false
 rotatable = false
@@ -76,7 +77,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(659, 580)
 rotation = -5.75627
-texture = ExtResource("2_fxokx")
+texture = ExtResource("8_lyscb")
 script = ExtResource("3_6xfxu")
 movable = false
 rotatable = false
@@ -85,7 +86,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(1055, 559)
 rotation = -7.01545
-texture = ExtResource("2_fxokx")
+texture = ExtResource("8_lyscb")
 script = ExtResource("3_6xfxu")
 movable = false
 rotatable = false

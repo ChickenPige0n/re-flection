@@ -1,15 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5ye4upg4e1mj"]
+[gd_scene load_steps=7 format=3 uid="uid://b5ye4upg4e1mj"]
 
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_mkcba"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_ydant"]
-[ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_fwljx"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_pob4m"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_bcusq"]
-[ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_1wx16"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_840ub"]
-[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="7_ydant"]
+[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="7_ydant"]
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 
 [node name="EditUi" parent="." instance=ExtResource("1_mkcba")]
 anchors_preset = 0
@@ -25,21 +23,18 @@ texture_filter = 1
 position = Vector2(347, 90)
 rotation = -3.6186
 texture = ExtResource("2_ydant")
-script = ExtResource("3_fwljx")
 
 [node name="Mirror2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(271, 245)
 rotation = 6.08349
 texture = ExtResource("2_ydant")
-script = ExtResource("3_fwljx")
 
 [node name="Mirror3" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(519, 168)
 rotation = 0.285356
 texture = ExtResource("2_ydant")
-script = ExtResource("3_fwljx")
 
 [node name="Light" type="Line2D" parent="."]
 points = PackedVector2Array(0, 3.305, 246.628, 249.933, 302.218, 113.144, 451.862, 148.304, 451.862, 148.304)
@@ -52,10 +47,6 @@ starting_pos = Vector2(0, 3.305)
 position = Vector2(183, 406)
 rotation = 1.5708
 texture = ExtResource("5_bcusq")
-script = ExtResource("6_1wx16")
-length = 0.0
-movable = false
-rotatable = false
 
 [node name="Light3" type="Line2D" parent="."]
 points = PackedVector2Array(0, 350, 1000, 350)

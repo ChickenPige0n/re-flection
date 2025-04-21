@@ -7,14 +7,20 @@ var exampleLightDown: Light
 
 @export var levelContainer: FlowContainer
 @export var changeSceneButton: PackedScene
+
+var nums_of_levels: int = 3
+var passedTime: Array = []
+
 func _ready() -> void:
 	doTween()
+	passedTime.resize(nums_of_levels)
 	
-	for i in range(1,3 + 1):
+	for i in range(1,nums_of_levels + 1):
 		var scene = changeSceneButton.instantiate() as Button
 		levelContainer.add_child(scene)
 		scene.text = "第%s关" % [i]
 		scene.pressed.connect(loadGame.bind(i))
+		
 
 func loadGame(index: int):
 	curIndex = index
@@ -29,8 +35,9 @@ func loadGame(index: int):
 var curIndex: int
 func showResult(timeCost: float):
 	self.visible = true
+	passedTime[curIndex-1] = timeCost
 	# TODO
-	print("called showResult")
+	print(passedTime)
 
 func _process(delta: float) -> void:
 	pass
