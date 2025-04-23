@@ -61,10 +61,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
-	var game = get_parent()
-	if game is Game:
-		if game.winning:
-			return
+	# var game = get_parent()
+	# if game is Game:
+	# 	if game.winning:
+	# 		return
 	if event is InputEventMouseButton:
 		handle_click(event)
 

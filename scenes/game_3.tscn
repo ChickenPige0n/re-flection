@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_khyur"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_r1ad8"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_1uv66"]
-[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="4_r1ad8"]
-[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="5_w46gi"]
+[ext_resource type="Texture2D" uid="uid://c4bb5tsni7woq" path="res://images/candle/candle_unlit.png" id="4_ugac3"]
 [ext_resource type="Texture2D" uid="uid://86lfxhjar7bl" path="res://images/mirror_immovable_irrotatable.png" id="6_p30vf"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_ugac3"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_2px5s"]
+[ext_resource type="Texture2D" uid="uid://cv7jk4imhy8yy" path="res://images/candle/candle_lit_8.png" id="9_p30vf"]
 [ext_resource type="Texture2D" uid="uid://dcsp72esief71" path="res://images/convex_movable_irrotatable.png" id="10_2px5s"]
 [ext_resource type="Texture2D" uid="uid://bpc0a2hec82xu" path="res://images/convex_immovable_rotatable.png" id="12_cyvdb"]
 [ext_resource type="Texture2D" uid="uid://bxa17agh5j6rn" path="res://images/concave_movable_irrotatable.png" id="13_pnpoq"]
@@ -36,9 +36,10 @@ direction = Vector2(0.523263, 0.852171)
 starting_pos = Vector2(0, 3.305)
 
 [node name="Photosensitive" type="Sprite2D" parent="."]
-position = Vector2(1119, 33)
+position = Vector2(1088, 132)
 rotation = 0.00347358
-texture = ExtResource("4_r1ad8")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_p30vf")
 script = ExtResource("8_2px5s")
 
 [node name="Mirror1" type="Sprite2D" parent="."]
@@ -69,9 +70,10 @@ movable = false
 rotatable = false
 
 [node name="Photosensitive2" type="Sprite2D" parent="."]
-position = Vector2(1026, 521)
+position = Vector2(1027, 553)
 rotation = 0.00156415
-texture = ExtResource("5_w46gi")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ugac3")
 script = ExtResource("8_2px5s")
 
 [node name="Mirror4" type="Sprite2D" parent="."]
@@ -102,9 +104,10 @@ movable = false
 rotatable = false
 
 [node name="Photosensitive3" type="Sprite2D" parent="."]
-position = Vector2(123, 531)
+position = Vector2(125, 514)
 rotation = 0.00156415
-texture = ExtResource("4_r1ad8")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ugac3")
 script = ExtResource("8_2px5s")
 
 [node name="Convex1" type="Sprite2D" parent="."]

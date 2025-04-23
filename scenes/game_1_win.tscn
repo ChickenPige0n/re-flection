@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="3_73mcg"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="4_n0d8q"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="5_5a4ud"]
-[ext_resource type="Texture2D" uid="uid://bhujnlu3776ui" path="res://images/photosensitive/photosensitive_inactive.png" id="6_7m2qd"]
+[ext_resource type="Texture2D" uid="uid://c4bb5tsni7woq" path="res://images/candle/candle_unlit.png" id="6_7m2qd"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="7_4bv5g"]
 
 [node name="Game" type="Node2D"]

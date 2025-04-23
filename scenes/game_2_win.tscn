@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="5_04w7j"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="6_11tig"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="7_expeq"]
-[ext_resource type="Texture2D" uid="uid://bjlen1bycu36b" path="res://images/photosensitive/photosensitive_active.png" id="8_fb0uj"]
+[ext_resource type="Texture2D" uid="uid://c4bb5tsni7woq" path="res://images/candle/candle_unlit.png" id="8_fb0uj"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="9_2r0de"]
 [ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="10_otcl1"]
 

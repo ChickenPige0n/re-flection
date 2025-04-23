@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 			win = false
 	if win and not winning:
 		winning = true
-		endInput()
+		# endInput()
 		# todo: replace with packed sprite
 		var label:Label = Label.new()
 		label.label_settings = LabelSettings.new()
