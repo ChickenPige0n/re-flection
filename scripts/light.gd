@@ -17,7 +17,6 @@ func _process(_delta: float) -> void:
 	
 	var components = get_parent().get_children().filter(func(it): return it is Intersectable)
 	var photosensitives = get_parent().get_children().filter(func(it): return it is Photosensitive)
-	var active_photosensitives:Array = []
 	
 	var max_reflections = 100  # Prevent infinite loops
 	var reflection_count = 0
@@ -31,7 +30,8 @@ func _process(_delta: float) -> void:
 		# Find the closest intersection
 		for component in components:
 			# Skip the component we just reflected off to prevent immediate re-reflection
-			if component == last_component and reflection_count > 0:
+			# if component == last_component and reflection_count > 0:
+			if component == last_component:
 				continue
 				
 			var intersection = component.get_intersection(now_position, now_direction)  # Get the intersection point with the component
@@ -43,13 +43,13 @@ func _process(_delta: float) -> void:
 					closest_component_point = intersection
 					closest_component = component
 		
+		#判断感光
+		for photosensitive in photosensitives:
+			photosensitive.shine(now_position, now_direction, closest_component_point if closest_component else Vector2.ZERO)
+			
+
 		# If we found a component, add the reflection
 		if closest_component:
-			#判断感光
-			for photosensitive in photosensitives:
-				if photosensitive.shine(now_position, now_direction, closest_component_point):
-					active_photosensitives.append(photosensitive)
-
 			self.add_point(closest_component_point)
 			now_position = closest_component_point
 			now_direction = closest_component.calculate_light_direction(closest_component_point, now_direction)
@@ -57,14 +57,9 @@ func _process(_delta: float) -> void:
 				break
 			reflection_count += 1
 		else:
-			for photosensitive in photosensitives:
-				photosensitive.shine(now_position, now_direction, Vector2.ZERO)
 			# No more intersections found
 			break
 	
-	#photosensitive activate
-	for active_photosensitive in active_photosensitives:
-		active_photosensitive.litting = true
 	
 	# Add the final ray extending outward
 	self.add_point(now_position + now_direction * 10000)

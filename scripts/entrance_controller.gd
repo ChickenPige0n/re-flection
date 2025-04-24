@@ -8,7 +8,7 @@ var exampleLightDown: Light
 @export var levelContainer: FlowContainer
 @export var changeSceneButton: PackedScene
 
-var nums_of_levels: int = 3
+var nums_of_levels: int = 4
 var passedTime: Array = []
 
 func _ready() -> void:
@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 	pass
 	#exampleLight.direction = Vector2.from_angle(exampleLight.direction.angle() + delta)
 
+var speed = 3
 func doTween():
 	var tweenUp = create_tween()\
 	.set_ease(Tween.EASE_IN_OUT)\
@@ -50,8 +51,8 @@ func doTween():
 	.set_loops()\
 	.bind_node(exampleLightUp)
 	
-	tweenUp.tween_property(exampleLightUp, "direction", Vector2.from_angle(PI / 4), 3)
-	tweenUp.tween_property(exampleLightUp, "direction", Vector2.from_angle(0), 3)
+	tweenUp.tween_property(exampleLightUp, "direction", Vector2.from_angle(PI / 4), speed)
+	tweenUp.tween_property(exampleLightUp, "direction", Vector2.from_angle(0), speed)
 	
 	var tweenDown = create_tween()\
 	.set_ease(Tween.EASE_IN_OUT)\
@@ -59,8 +60,8 @@ func doTween():
 	.set_loops()\
 	.bind_node(exampleLightDown)
 	
-	tweenDown.tween_property(exampleLightDown, "direction", Vector2.from_angle(-PI / 4), 3)
-	tweenDown.tween_property(exampleLightDown, "direction", Vector2.from_angle(0), 3)
+	tweenDown.tween_property(exampleLightDown, "direction", Vector2.from_angle(-PI / 4), speed)
+	tweenDown.tween_property(exampleLightDown, "direction", Vector2.from_angle(0), speed)
 
 	
 
