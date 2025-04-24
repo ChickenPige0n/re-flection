@@ -17,6 +17,7 @@ func _process(_delta: float) -> void:
 	
 	var components = get_parent().get_children().filter(func(it): return it is Intersectable)
 	var photosensitives = get_parent().get_children().filter(func(it): return it is Photosensitive)
+	var active_photosensitives:Array = []
 	
 	var max_reflections = 100  # Prevent infinite loops
 	var reflection_count = 0
@@ -46,7 +47,8 @@ func _process(_delta: float) -> void:
 		if closest_component:
 			#判断感光
 			for photosensitive in photosensitives:
-				photosensitive.shine(now_position, now_direction, closest_component_point)
+				if photosensitive.shine(now_position, now_direction, closest_component_point):
+					active_photosensitives.append(photosensitive)
 
 			self.add_point(closest_component_point)
 			now_position = closest_component_point
@@ -59,6 +61,10 @@ func _process(_delta: float) -> void:
 				photosensitive.shine(now_position, now_direction, Vector2.ZERO)
 			# No more intersections found
 			break
+	
+	#photosensitive activate
+	for active_photosensitive in active_photosensitives:
+		active_photosensitive.litting = true
 	
 	# Add the final ray extending outward
 	self.add_point(now_position + now_direction * 10000)
