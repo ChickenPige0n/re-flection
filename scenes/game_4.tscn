@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://csonnvjsfn7ii"]
+[gd_scene load_steps=10 format=3 uid="uid://csonnvjsfn7ii"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_n5ftk"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="2_8u0ss"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="3_5dy1a"]
-[ext_resource type="Texture2D" uid="uid://cv7jk4imhy8yy" path="res://images/candle/candle_lit_8.png" id="4_ibygo"]
+[ext_resource type="Texture2D" uid="uid://c4bb5tsni7woq" path="res://images/candle/candle_unlit.png" id="4_ibygo"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="5_0x10j"]
+[ext_resource type="Texture2D" uid="uid://86lfxhjar7bl" path="res://images/mirror_immovable_irrotatable.png" id="6_eocld"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="7_gasu4"]
-[ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="8_nacpo"]
+[ext_resource type="Texture2D" uid="uid://bf58laid1ker8" path="res://images/mirror_movable_irrotatable.png" id="8_ow33d"]
+[ext_resource type="Texture2D" uid="uid://c6cakhn6vwkpm" path="res://images/mirror_immovable_rotatable.png" id="9_qpdx2"]
 
 [node name="Game3" type="Node2D"]
 script = ExtResource("1_n5ftk")
@@ -31,7 +33,7 @@ starting_pos = Vector2(0, 3.305)
 [node name="Photosensitive" type="Sprite2D" parent="."]
 position = Vector2(631, 300)
 rotation = 0.00347358
-scale = Vector2(0.256068, 0.208471)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_ibygo")
 script = ExtResource("5_0x10j")
 
@@ -39,7 +41,7 @@ script = ExtResource("5_0x10j")
 texture_filter = 1
 position = Vector2(618, 506)
 rotation = -6.28109
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -48,7 +50,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(618, 483)
 rotation = 3.14021
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -57,7 +59,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(378, 446)
 rotation = 0.479357
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -66,7 +68,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(387, 427)
 rotation = -8.93989
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -75,7 +77,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(858, 445)
 rotation = -6.7882
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -84,7 +86,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(851, 422)
 rotation = -3.6505
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -93,7 +95,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(726, 285)
 rotation = -7.98557
-texture = ExtResource("8_nacpo")
+texture = ExtResource("8_ow33d")
 script = ExtResource("7_gasu4")
 rotatable = false
 
@@ -101,7 +103,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(642, 84)
 rotation = -9.42004
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -110,7 +112,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(642, 111)
 rotation = -6.28109
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -119,7 +121,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(873, 175)
 rotation = -5.7549
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -128,7 +130,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(881, 148)
 rotation = -8.89147
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -137,7 +139,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(407, 166)
 rotation = -6.74974
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -146,7 +148,7 @@ rotatable = false
 texture_filter = 1
 position = Vector2(398, 140)
 rotation = -3.60184
-texture = ExtResource("8_nacpo")
+texture = ExtResource("6_eocld")
 script = ExtResource("7_gasu4")
 movable = false
 rotatable = false
@@ -155,6 +157,6 @@ rotatable = false
 texture_filter = 1
 position = Vector2(232, 218)
 rotation = -4.4059
-texture = ExtResource("8_nacpo")
+texture = ExtResource("9_qpdx2")
 script = ExtResource("7_gasu4")
 movable = false

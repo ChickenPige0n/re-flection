@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dflbus2hljpdw"]
+[gd_scene load_steps=14 format=3 uid="uid://dflbus2hljpdw"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_khyur"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="1_w46gi"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://86lfxhjar7bl" path="res://images/mirror_immovable_irrotatable.png" id="6_p30vf"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="6_ugac3"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="8_2px5s"]
-[ext_resource type="Texture2D" uid="uid://cv7jk4imhy8yy" path="res://images/candle/candle_lit_8.png" id="9_p30vf"]
 [ext_resource type="Texture2D" uid="uid://dcsp72esief71" path="res://images/convex_movable_irrotatable.png" id="10_2px5s"]
 [ext_resource type="Texture2D" uid="uid://bpc0a2hec82xu" path="res://images/convex_immovable_rotatable.png" id="12_cyvdb"]
 [ext_resource type="Texture2D" uid="uid://bxa17agh5j6rn" path="res://images/concave_movable_irrotatable.png" id="13_pnpoq"]
@@ -39,7 +38,7 @@ starting_pos = Vector2(0, 3.305)
 position = Vector2(1088, 132)
 rotation = 0.00347358
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_p30vf")
+texture = ExtResource("4_ugac3")
 script = ExtResource("8_2px5s")
 
 [node name="Mirror1" type="Sprite2D" parent="."]

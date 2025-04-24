@@ -30,8 +30,8 @@ func _process(_delta: float) -> void:
 		# Find the closest intersection
 		for component in components:
 			# Skip the component we just reflected off to prevent immediate re-reflection
-			# if component == last_component and reflection_count > 0:
-			if component == last_component:
+			if component == last_component and reflection_count > 0:
+			# if component == last_component:
 				continue
 				
 			var intersection = component.get_intersection(now_position, now_direction)  # Get the intersection point with the component

@@ -45,7 +45,6 @@ func get_line_intersection(line1_start: Vector2, line1_end: Vector2, line2_start
 
 
 #Move and rotate functions
-var is_selected: bool = false
 var dragging: bool = false
 var rotating: bool = false
 var bias: Vector2 = Vector2.ZERO
@@ -61,29 +60,20 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
-	# var game = get_parent()
-	# if game is Game:
-	# 	if game.winning:
-	# 		return
 	if event is InputEventMouseButton:
 		handle_click(event)
 
 func handle_click(event: InputEventMouseButton):
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
-			if event.ctrl_pressed:
-				if rotatable and is_selected:
+			if self.get_rect().has_point(to_local(event.position)):
+				if rotatable and not movable or event.ctrl_pressed and movable:
 					rotating = true
 					facing_mouse = self.position.direction_to(event.position)
 					facing_origin = Vector2.from_angle(self.rotation)
-			elif self.get_rect().has_point(to_local(event.position)):
-				is_selected = true
-				if movable:
+				elif movable:
 					dragging = true
 					bias = event.position - self.position
-				
-			else:
-				is_selected = false
 		else:
 			dragging = false
 			rotating = false

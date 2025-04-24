@@ -45,6 +45,7 @@ func _process(delta: float) -> void:
 		add_child(timer)
 		timer.timeout.connect(gameOver)
 		timer.start()
+
 func gameOver():
 	print("game is over")
 	completed.emit(timeCost)

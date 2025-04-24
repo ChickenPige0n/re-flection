@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdykgb0n7jbxu"]
+[gd_scene load_steps=11 format=3 uid="uid://cdykgb0n7jbxu"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_gl1xk"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="2_nmfna"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ksr6f3hm7cm5" path="res://images/concave.png" id="8_6wioo"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="9_mrhsx"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="10_xilxr"]
-[ext_resource type="Texture2D" uid="uid://cv7jk4imhy8yy" path="res://images/candle/candle_lit_8.png" id="11_iipew"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_gl1xk")
@@ -81,7 +80,7 @@ rotatable = false
 [node name="Photosensitive2" type="Sprite2D" parent="."]
 position = Vector2(1026, 521)
 rotation = 0.00156415
-texture = ExtResource("11_iipew")
+texture = ExtResource("6_nmfna")
 script = ExtResource("7_t4tyb")
 
 [node name="Mirror4" type="Sprite2D" parent="."]

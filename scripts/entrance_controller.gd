@@ -10,17 +10,19 @@ var exampleLightDown: Light
 
 var nums_of_levels: int = 4
 var passedTime: Array = []
+var buttons : Array = []
 
 func _ready() -> void:
 	doTween()
 	passedTime.resize(nums_of_levels)
+
 	
-	for i in range(1,nums_of_levels + 1):
+	for i in range(1,nums_of_levels+1):
 		var scene = changeSceneButton.instantiate() as Button
 		levelContainer.add_child(scene)
 		scene.text = "第%s关" % [i]
 		scene.pressed.connect(loadGame.bind(i))
-		
+		buttons.append(scene)
 
 func loadGame(index: int):
 	curIndex = index
@@ -28,18 +30,22 @@ func loadGame(index: int):
 	var scene = load(sceneStr) as PackedScene
 	var game = scene.instantiate() as Game
 	print("instantiated " + sceneStr)
-	game.completed.connect(showResult)
+	game.completed.connect(_showResult)
 	get_tree().root.add_child(game)
 	self.visible = false
 
 var curIndex: int
-func showResult(timeCost: float):
+func _showResult(timeCost: float):
 	self.visible = true
 	passedTime[curIndex-1] = timeCost
 	# TODO
-	print(passedTime)
+	# print(passedTime)
 
 func _process(delta: float) -> void:
+	for i in range(1,nums_of_levels+1):
+		if passedTime[i-1]:
+			buttons[i-1].add_theme_color_override("font_color", Color.AQUAMARINE)
+			buttons[i-1].text = "第%s关\n" % [i] + "  时间：%.2f" % [passedTime[i-1]] + "s"
 	pass
 	#exampleLight.direction = Vector2.from_angle(exampleLight.direction.angle() + delta)
 

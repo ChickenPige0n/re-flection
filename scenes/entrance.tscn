@@ -196,14 +196,14 @@ text = "开始游戏"
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="LightUp" type="Line2D" parent="Node2D"]
-points = PackedVector2Array(0, 1, 319.371, 1, 446.913, 31.9124, 560.874, 502.126, -9157.77, -1853.3)
+points = PackedVector2Array(0, 1, 304.777, 1, 449.386, 34.3857, 558.026, 504.974, -9185.69, -1744.45)
 width = 5.0
 script = ExtResource("4_5dtqe")
 direction = Vector2(1, 0)
 starting_pos = Vector2(0, 1)
 
 [node name="LightDown" type="Line2D" parent="Node2D"]
-points = PackedVector2Array(0, 647, 307.43, 647, 439.242, 623.758, 529.107, 114.107, -9318.99, 1850.51)
+points = PackedVector2Array(0, 647, 304.777, 647, 449.385, 613.614, 558.029, 143.029, -9185.69, 2392.45)
 width = 5.0
 script = ExtResource("4_5dtqe")
 direction = Vector2(1, 0)
@@ -212,7 +212,7 @@ starting_pos = Vector2(0, 647)
 [node name="Mirror5" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(296, 648)
-rotation = -0.0872665
+rotation = -0.113446
 texture = ExtResource("2_gm1gp")
 script = ExtResource("3_iyrkg")
 
@@ -250,8 +250,8 @@ rotatable = false
 
 [node name="Mirror6" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(311, 0)
-rotation = -3.0227
+position = Vector2(296, 0)
+rotation = -3.02815
 texture = ExtResource("2_gm1gp")
 script = ExtResource("3_iyrkg")
 
