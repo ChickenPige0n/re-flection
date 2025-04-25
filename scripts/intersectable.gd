@@ -67,7 +67,7 @@ func handle_click(event: InputEventMouseButton):
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			if self.get_rect().has_point(to_local(event.position)):
-				if rotatable and not movable or event.ctrl_pressed and movable:
+				if rotatable and not movable or event.ctrl_pressed and movable and rotatable:
 					rotating = true
 					facing_mouse = self.position.direction_to(event.position)
 					facing_origin = Vector2.from_angle(self.rotation)

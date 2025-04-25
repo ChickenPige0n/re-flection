@@ -8,7 +8,7 @@ var exampleLightDown: Light
 @export var levelContainer: FlowContainer
 @export var changeSceneButton: PackedScene
 
-var nums_of_levels: int = 4
+var nums_of_levels: int = 7
 var passedTime: Array = []
 var buttons : Array = []
 
