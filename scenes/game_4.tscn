@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk6cl8ufqqpyu"]
+[gd_scene load_steps=10 format=3 uid="uid://dk6cl8ufqqpyu"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_n5ftk"]
 [ext_resource type="PackedScene" uid="uid://dicdnfr2f5pjf" path="res://scenes/edit_ui.tscn" id="2_8u0ss"]
+[ext_resource type="Texture2D" uid="uid://nhru8mctt6um" path="res://images/background.jpg" id="2_eocld"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="3_5dy1a"]
 [ext_resource type="Texture2D" uid="uid://c4bb5tsni7woq" path="res://images/candle/candle_unlit.png" id="4_ibygo"]
 [ext_resource type="Script" uid="uid://kbgoyaf4o8ha" path="res://scripts/photosensitive.gd" id="5_0x10j"]
@@ -11,6 +12,11 @@
 
 [node name="Game3" type="Node2D"]
 script = ExtResource("1_n5ftk")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576.111, 323.625)
+scale = Vector2(0.810938, 0.810938)
+texture = ExtResource("2_eocld")
 
 [node name="EditUi" parent="." instance=ExtResource("2_8u0ss")]
 anchors_preset = 0

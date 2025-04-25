@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_ydant"]
 [ext_resource type="Texture2D" uid="uid://bpc0a2hec82xu" path="res://images/convex_immovable_rotatable.png" id="3_jorxo"]
 [ext_resource type="Script" uid="uid://13bw628tdjjt" path="res://scripts/lens.gd" id="4_kamxp"]
-[ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_pob4m"]
+[ext_resource type="Script" uid="uid://d2s21whnx43cx" path="res://scripts/light_test.gd" id="5_jorxo"]
 
 [node name="Game2" type="Node2D"]
 
@@ -31,14 +31,12 @@ script = ExtResource("4_kamxp")
 movable = false
 
 [node name="Light" type="Line2D" parent="."]
-points = PackedVector2Array(1000, 200, 586.663, 468.256, 282.404, 543.86, -9490.04, -1577.29)
+points = PackedVector2Array(100, 100, 400, 300)
 width = 5.0
-script = ExtResource("4_pob4m")
-direction = Vector2(-0.838827, 0.544399)
-starting_pos = Vector2(1000, 200)
+script = ExtResource("5_jorxo")
 
 [node name="Convex3" type="Sprite2D" parent="."]
-position = Vector2(582, 421)
+position = Vector2(467, 311)
 rotation = -1.66915
 texture = ExtResource("3_jorxo")
 script = ExtResource("4_kamxp")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf0ctbd3srhtx"]
+
+[ext_resource type="Texture2D" uid="uid://1yhgcf2b2fyx" path="res://images/button_star/unpassed_unhover.png" id="1_0vjgd"]
+[ext_resource type="Script" uid="uid://divqqjqk3hasp" path="res://scripts/button_star.gd" id="1_41r7g"]
+[ext_resource type="Texture2D" uid="uid://cyiujv321apx" path="res://images/button_star/unpassed_hover.png" id="2_0841u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vjgd"]
+line_spacing = 4.0
+font_size = 24
+
+[node name="TextureButton" type="TextureButton"]
+offset_top = 8.0
+offset_right = 108.0
+offset_bottom = 116.0
+texture_normal = ExtResource("1_0vjgd")
+texture_hover = ExtResource("2_0841u")
+script = ExtResource("1_41r7g")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 16.0
+offset_right = 181.0
+offset_bottom = 88.0
+text = "第一关
+时间："
+label_settings = SubResource("LabelSettings_0vjgd")
+vertical_alignment = 1

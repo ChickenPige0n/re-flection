@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://72k5fnccqpim"]
+[gd_scene load_steps=13 format=3 uid="uid://72k5fnccqpim"]
 
 [ext_resource type="Script" uid="uid://bcdfdh21ipc6c" path="res://scripts/game.gd" id="1_b4gt0"]
 [ext_resource type="Texture2D" uid="uid://cr82j1dxeqg32" path="res://images/mirror.png" id="2_b4gt0"]
+[ext_resource type="Texture2D" uid="uid://nhru8mctt6um" path="res://images/background.jpg" id="2_kmooo"]
 [ext_resource type="Script" uid="uid://bd23oolcj74gq" path="res://scripts/mirror.gd" id="3_kmooo"]
 [ext_resource type="Script" uid="uid://dqpdk88faq73y" path="res://scripts/light.gd" id="4_glh1a"]
 [ext_resource type="Texture2D" uid="uid://cq7ra41w2gxcx" path="res://images/convex.png" id="5_dr8oi"]
@@ -18,6 +19,11 @@ font_size = 32
 
 [node name="Game2" type="Node2D"]
 script = ExtResource("1_b4gt0")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576.111, 323.625)
+scale = Vector2(0.810938, 0.810938)
+texture = ExtResource("2_kmooo")
 
 [node name="Light" type="Line2D" parent="."]
 points = PackedVector2Array(0, 300, 10000, 300)

@@ -1,21 +1,25 @@
 class_name Game
 extends Node2D
 
-
 var judgePoints
-
 var timeCost = 0.0
 @export
 var hintLabel: Label
 signal completed(timeCost: float)
 
+@export var audio_player: AudioStreamPlayer
+
 func _ready() -> void:
 	judgePoints = get_children().filter(func(it): return it is Photosensitive) as Array[Photosensitive]
+	audio_player.finished.connect(_on_audio_finished)
+	audio_player.play()
+	
 
 var winning: bool = false
 
 func _process(delta: float) -> void:
-	timeCost += delta
+	if not winning: # 减少最后3s的计时
+		timeCost += delta
 	if timeCost > 5 and hintLabel:
 		var tween = hintLabel.create_tween().bind_node(hintLabel).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property(hintLabel, "position", Vector2(250, 20), 2)
@@ -25,6 +29,7 @@ func _process(delta: float) -> void:
 			win = false
 	if win and not winning:
 		winning = true
+		audio_player.stop()
 		# endInput()
 		# todo: replace with packed sprite
 		var label:Label = Label.new()
@@ -57,3 +62,7 @@ func endInput():
 		component.is_selected = false
 		component.dragging = false
 		component.rotating = false
+
+func _on_audio_finished():
+	# 音频结束后重新播放
+	audio_player.play()

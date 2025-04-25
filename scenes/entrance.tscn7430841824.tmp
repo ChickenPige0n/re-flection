@@ -151,7 +151,7 @@ grow_vertical = 2
 script = ExtResource("1_aidi3")
 exampleLightUp = NodePath("Node2D/LightUp")
 exampleLightDown = NodePath("Node2D/LightDown")
-line_stars = NodePath("Control/MarginContainer/LineStars")
+line_stars = NodePath("Control/LineStars")
 levelContainer = NodePath("Control/MarginContainer/Container")
 changeSceneButton = ExtResource("2_5dtqe")
 animator = NodePath("AnimationPlayer")
@@ -289,9 +289,9 @@ theme_override_constants/v_separation = 40
 [node name="Container" type="Container" parent="Control/MarginContainer"]
 layout_mode = 2
 
-[node name="LineStars" type="Line2D" parent="Control/MarginContainer"]
-position = Vector2(-1202, -50)
-points = PackedVector2Array(1444, 438)
+[node name="LineStars" type="Line2D" parent="Control"]
+position = Vector2(-1152, 0)
+points = PackedVector2Array(1856, -135)
 width = 2.0
 default_color = Color(0.442911, 0.442911, 0.442911, 1)
 
